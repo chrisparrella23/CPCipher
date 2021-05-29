@@ -10,6 +10,7 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import app.App;
 import javafx.scene.control.TextArea;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
@@ -31,7 +32,7 @@ public class FileHelper {
 			fw.write(content);
 			fw.close();
 		} catch (IOException e) {
-			Logger.getLogger(Demo.class.getName()).log(Level.SEVERE, null, e);
+			Logger.getLogger(App.class.getName()).log(Level.SEVERE, null, e);
 		}
 	}
 	
