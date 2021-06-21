@@ -14,9 +14,5 @@ public class Vigenere {
 			return (char) (val + keyVal);
 		}
 	}
-	
-	public static String encrypt(String text, String key) {
-		text = CaesarShift.removeSpaces(text);
-	}
 
 }
