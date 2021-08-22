@@ -49,7 +49,7 @@ public class AppController implements Initializable {
 		switch(selectedMethod) {
 			case "Caesar":	ciphertext = Caesar.encrypt(plaintext);
 				break;
-			case "Vigenere":	ciphertext = Vigenere.encrypt(plaintext, key);
+			case "Vigenere":	ciphertext = Vigenere.encrypt(plaintext);
 				break;
 		}
 		postArea.setText(ciphertext);
@@ -66,6 +66,7 @@ public class AppController implements Initializable {
 		switch(selectedMethod) {
 			case "Caesar":	plaintext = Caesar.decrypt(ciphertext);
 				break;
+			case "Vigenere":	plaintext = Vigenere.decrypt(ciphertext);
 		}
 		postArea.setText(plaintext);
 	}

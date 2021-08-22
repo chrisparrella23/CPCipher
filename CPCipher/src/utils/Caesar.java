@@ -6,6 +6,10 @@ import javafx.scene.control.TextInputDialog;
 
 public class Caesar {
 	
+	/*TODO
+	 * Do exception handling for invalid/string input for key.
+	 */
+	
 	/** Removes spaces from the text and capitalizes all letters.
 	 * 
 	 * @param str A String representing the text.
