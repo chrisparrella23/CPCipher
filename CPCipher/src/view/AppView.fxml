@@ -52,7 +52,7 @@
                <children>
                   <ComboBox fx:id="methodBox" layoutX="35.0" layoutY="35.0" prefWidth="150.0" promptText="Encryption Method" />
                   <Button layoutX="35.0" layoutY="78.0" mnemonicParsing="false" onAction="#encryptSelected" text="Encrypt" />
-                  <Button layoutX="127.0" layoutY="78.0" mnemonicParsing="false" text="Decrypt" />
+                  <Button layoutX="127.0" layoutY="78.0" mnemonicParsing="false" onAction="#decryptSelected" text="Decrypt" />
                </children>
             </AnchorPane>
          </children>

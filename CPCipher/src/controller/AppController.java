@@ -50,6 +50,16 @@ public class AppController implements Initializable {
 		postArea.setText(ciphertext);
 	}
 	
+	@FXML
+	private void decryptSelected(ActionEvent event) throws IOException {
+		ciphertext = preArea.getText();
+		switch(selectedMethod) {
+			case "Caesar":	plaintext = Caesar.decrypt(ciphertext);
+				break;
+		}
+		postArea.setText(plaintext);
+	}
+	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		methodBox.setItems(methods);

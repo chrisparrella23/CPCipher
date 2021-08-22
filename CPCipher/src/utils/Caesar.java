@@ -89,22 +89,32 @@ public class Caesar {
 		}
 	}
 	
-	/** Decrypts the given plaintext.
+	/** Decrypts the given ciphertext.
 	 * 
 	 * @param text A String representing the ciphertext.
 	 * @param num An int representing the number of spaces
 	 * 		by which to shift each letter in the ciphertext.
 	 * @return A String representing the decrypted plaintext.
 	 */
-	public static String decrypt(String text, int num) {
-		text = removeSpaces(text);
-		StringBuilder sb = new StringBuilder();
-		char[] arr = text.toCharArray();
-		char[] shiftedArr = new char[arr.length];
-		for (int i = 0; i < arr.length; i++) {
-			shiftedArr[i] = unshiftChar(arr[i], num);
-			sb.append(shiftedArr[i]);
+	public static String decrypt(String text) {
+		TextInputDialog dialog = new TextInputDialog();
+		dialog.setTitle("Encrypt");
+		dialog.setContentText("Enter a number.");
+		Optional<String> result = dialog.showAndWait();
+		if (result.isPresent()) {
+			int num = Integer.parseInt(result.get());
+			text = removeSpaces(text);
+			StringBuilder sb = new StringBuilder();
+			char[] arr = text.toCharArray();
+			char[] shiftedArr = new char[arr.length];
+			for (int i = 0; i < arr.length; i++) {
+				shiftedArr[i] = unshiftChar(arr[i], num);
+				sb.append(shiftedArr[i]);
+			}
+			return sb.toString();
+		} else {
+			// put exception handling here.
 		}
-		return sb.toString();
+		return text;
 	}
 }
