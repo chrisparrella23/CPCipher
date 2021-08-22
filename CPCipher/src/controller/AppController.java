@@ -38,6 +38,11 @@ public class AppController implements Initializable {
 	public AppController() {
 	}
 	
+	/** Encrypts the given plaintext using the selected method.
+	 * 
+	 * @param event
+	 * @throws IOException
+	 */
 	@FXML
 	private void encryptSelected(ActionEvent event) throws IOException {
 		plaintext = preArea.getText();
@@ -50,6 +55,11 @@ public class AppController implements Initializable {
 		postArea.setText(ciphertext);
 	}
 	
+	/** Decrypts the given ciphertext using the selected method.
+	 * 
+	 * @param event
+	 * @throws IOException
+	 */
 	@FXML
 	private void decryptSelected(ActionEvent event) throws IOException {
 		ciphertext = preArea.getText();
