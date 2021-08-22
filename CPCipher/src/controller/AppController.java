@@ -1,5 +1,6 @@
 package controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -7,8 +8,10 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
 import utils.Caesar;
@@ -16,46 +19,44 @@ import utils.Vigenere;
 
 public class AppController implements Initializable {
 	
-	private String selectedMethod;
+	private String selectedMethod = "";
+	private String key;
+	private String plaintext = "";
+	private String ciphertext;
 	
 	@FXML
-	private ComboBox<String> methodBox;
-	
+	private ComboBox<String> methodBox = new ComboBox<String>();
 	@FXML
-	private TextArea preArea;
+	private TextArea preArea = new TextArea();
 	@FXML
-	private TextArea postTextArea;
+	private TextArea postArea = new TextArea();
+	@FXML
+	private Button button;
 	
 	ObservableList<String> methods = FXCollections.observableArrayList("Caesar", "Vigenere");
 	
 	public AppController() {
+	}
+	
+	@FXML
+	private void encryptSelected(ActionEvent event) throws IOException {
+		plaintext = preArea.getText();
+		switch(selectedMethod) {
+			case "Caesar":	ciphertext = Caesar.encrypt(plaintext);
+				break;
+			case "Vigenere":	ciphertext = Vigenere.encrypt(plaintext, key);
+				break;
+		}
+		postArea.setText(ciphertext);
+	}
+	
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		methodBox.setItems(methods);
 		methodBox.valueProperty().addListener(new ChangeListener<String>() {
 			public void changed(ObservableValue ov, String oldVal, String newVal) {
 				selectedMethod = newVal;
 			}
 		});
-		
-//		methodBox.getSelectionModel().selectedItemProperty().addListener(new ChangeListener() {
-//			public void changed(ObservableValue ov, String oldVal, String newVal) {
-//				
-//			}
-//		});
-	}
-	
-//	@FXML
-//	private void encryptSelected(String selectedMethod, String plaintext, String key) {
-//		String plaintext = preArea.getText();
-//		String key = 
-//		switch(selectedMethod) {
-//			case "Caesar":	Caesar.encrypt(plaintext, Integer.parseInt(key));
-//				break;
-//			case "Vigenere":	Vigenere.encrypt(plaintext, key);
-//				break;
-//		}
-//	}
-
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
-		methodBox.setItems(methods);
 	}
 }

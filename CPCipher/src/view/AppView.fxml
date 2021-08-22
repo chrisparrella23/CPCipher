@@ -46,12 +46,12 @@
                 </Menu>
               </menus>
             </MenuBar>
-            <TextArea GridPane.rowIndex="1" />
-            <TextArea minWidth="250.0" prefHeight="273.0" prefWidth="250.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <TextArea fx:id="preArea" GridPane.rowIndex="1" />
+            <TextArea fx:id="postArea" minWidth="250.0" prefHeight="273.0" prefWidth="250.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
                   <ComboBox fx:id="methodBox" layoutX="35.0" layoutY="35.0" prefWidth="150.0" promptText="Encryption Method" />
-                  <Button layoutX="35.0" layoutY="78.0" mnemonicParsing="false" text="Encrypt" />
+                  <Button layoutX="35.0" layoutY="78.0" mnemonicParsing="false" onAction="#encryptSelected" text="Encrypt" />
                   <Button layoutX="127.0" layoutY="78.0" mnemonicParsing="false" text="Decrypt" />
                </children>
             </AnchorPane>
