@@ -1,0 +1,37 @@
+root {
+	display: block;
+}
+
+.root {
+	-fx-background-color: #555555;
+}
+
+#menu-bar {
+	-fx-background-color: #969696;
+}
+
+#tool-bar {
+	-fx-background-color: #969696;
+}
+
+#field {
+	-fx-background-color: dimgrey;
+	-fx-text-fill: white;
+}
+
+.button {
+	-fx-background-color: gainsboro;
+}
+
+.button:hover {
+	-fx-background-color: whitesmoke;
+}
+
+.button:pressed {
+	-fx-background-color: grey;
+}
+
+#text-area {
+	-fx-control-inner-background: dimgrey;
+	-fx-text-fill: white;
+}
