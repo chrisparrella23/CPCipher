@@ -24,7 +24,7 @@
           <RowConstraints maxHeight="300.0" minHeight="10.0" prefHeight="273.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <MenuBar prefWidth="720.0" GridPane.columnSpan="3">
+            <MenuBar fx:id="menuBar" prefWidth="720.0" GridPane.columnSpan="3">
               <menus>
                 <Menu mnemonicParsing="false" text="File">
                   <items>
@@ -36,7 +36,8 @@
                 </Menu>
                   <Menu mnemonicParsing="false" text="Appearance">
                     <items>
-                      <MenuItem mnemonicParsing="false" text="Action 1" />
+                      <MenuItem fx:id="dark" mnemonicParsing="false" onAction="#setDark" text="Dark" />
+                        <MenuItem fx:id="dark1" mnemonicParsing="false" onAction="#setTerminal" text="Terminal" />
                     </items>
                   </Menu>
                 <Menu mnemonicParsing="false" text="Help">
@@ -51,8 +52,8 @@
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
                   <ComboBox fx:id="methodBox" layoutX="35.0" layoutY="35.0" prefWidth="150.0" promptText="Encryption Method" />
-                  <Button layoutX="35.0" layoutY="78.0" mnemonicParsing="false" onAction="#encryptSelected" text="Encrypt" />
-                  <Button layoutX="127.0" layoutY="78.0" mnemonicParsing="false" onAction="#decryptSelected" text="Decrypt" />
+                  <Button fx:id="button" layoutX="35.0" layoutY="78.0" mnemonicParsing="false" onAction="#encryptSelected" text="Encrypt" />
+                  <Button fx:id="button" layoutX="127.0" layoutY="78.0" mnemonicParsing="false" onAction="#decryptSelected" text="Decrypt" />
                </children>
             </AnchorPane>
          </children>

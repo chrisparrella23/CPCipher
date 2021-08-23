@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import app.App;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -11,8 +12,11 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.MenuBar;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
 import utils.Caesar;
 import utils.Vigenere;
@@ -30,8 +34,6 @@ public class AppController implements Initializable {
 	private TextArea preArea = new TextArea();
 	@FXML
 	private TextArea postArea = new TextArea();
-	@FXML
-	private Button button;
 	
 	ObservableList<String> methods = FXCollections.observableArrayList("Caesar", "Vigenere");
 	
@@ -79,5 +81,19 @@ public class AppController implements Initializable {
 				selectedMethod = newVal;
 			}
 		});
+	}
+	
+	@FXML
+	public void setDark(ActionEvent event) {
+		Scene scene = App.getScene();
+		scene.getStylesheets().clear();
+		scene.getStylesheets().add(getClass().getResource("/view/Dark.css").toExternalForm());
+	}
+	
+	@FXML
+	public void setTerminal(ActionEvent event) {
+		Scene scene = App.getScene();
+		scene.getStylesheets().clear();
+		scene.getStylesheets().add(getClass().getResource("/view/Terminal.css").toExternalForm());
 	}
 }

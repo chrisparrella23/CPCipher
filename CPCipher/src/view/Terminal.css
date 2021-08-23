@@ -1,0 +1,41 @@
+root {
+	display: block;
+}
+
+.root {
+	-fx-background-color: #111111;
+}
+
+#menuBar {
+	-fx-background-color: #888888;
+}
+
+.button {
+	-fx-background-color: #333333;
+	-fx-text-fill: limegreen;
+	-fx-font-family: "OCR A Extended";
+}
+
+.button:hover {
+	-fx-background-color: #333333;
+}
+
+.button:pressed {
+	-fx-background-color: black;
+}
+
+.comboBox {
+	-fx-background-color: black;
+}
+
+#preArea {
+	-fx-control-inner-background: black;
+	-fx-text-fill: limegreen;
+	-fx-font-family: "OCR A Extended";
+}
+
+#postArea {
+	-fx-control-inner-background: black;
+	-fx-text-fill: limegreen;
+	-fx-font-family: "OCR A Extended";
+}

@@ -6,17 +6,8 @@ root {
 	-fx-background-color: #555555;
 }
 
-#menu-bar {
+#menuBar {
 	-fx-background-color: #969696;
-}
-
-#tool-bar {
-	-fx-background-color: #969696;
-}
-
-#field {
-	-fx-background-color: dimgrey;
-	-fx-text-fill: white;
 }
 
 .button {
@@ -31,7 +22,16 @@ root {
 	-fx-background-color: grey;
 }
 
-#text-area {
+.methodBox {
+	-fx-background-color: black;
+}
+
+#preArea {
+	-fx-control-inner-background: dimgrey;
+	-fx-text-fill: white;
+}
+
+#postArea {
 	-fx-control-inner-background: dimgrey;
 	-fx-text-fill: white;
 }
