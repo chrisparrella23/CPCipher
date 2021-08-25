@@ -18,6 +18,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
+import utils.Bacon;
 import utils.Caesar;
 import utils.Vigenere;
 
@@ -35,7 +36,7 @@ public class AppController implements Initializable {
 	@FXML
 	private TextArea postArea = new TextArea();
 	
-	ObservableList<String> methods = FXCollections.observableArrayList("Caesar", "Vigenere");
+	ObservableList<String> methods = FXCollections.observableArrayList("Bacon", "Caesar", "Vigenere");
 	
 	public AppController() {
 	}
@@ -49,6 +50,8 @@ public class AppController implements Initializable {
 	private void encryptSelected(ActionEvent event) throws IOException {
 		plaintext = preArea.getText();
 		switch(selectedMethod) {
+			case "Bacon":	ciphertext = Bacon.encrypt(plaintext);
+				break;
 			case "Caesar":	ciphertext = Caesar.encrypt(plaintext);
 				break;
 			case "Vigenere":	ciphertext = Vigenere.encrypt(plaintext);
@@ -66,9 +69,12 @@ public class AppController implements Initializable {
 	private void decryptSelected(ActionEvent event) throws IOException {
 		ciphertext = preArea.getText();
 		switch(selectedMethod) {
+			case "Bacon":	plaintext = Bacon.decrypt(ciphertext);
+				break;
 			case "Caesar":	plaintext = Caesar.decrypt(ciphertext);
 				break;
 			case "Vigenere":	plaintext = Vigenere.decrypt(ciphertext);
+				break;
 		}
 		postArea.setText(plaintext);
 	}

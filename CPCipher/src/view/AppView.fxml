@@ -47,8 +47,8 @@
                 </Menu>
               </menus>
             </MenuBar>
-            <TextArea fx:id="preArea" GridPane.rowIndex="1" />
-            <TextArea fx:id="postArea" minWidth="250.0" prefHeight="273.0" prefWidth="250.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <TextArea fx:id="preArea" wrapText="true" GridPane.rowIndex="1" />
+            <TextArea fx:id="postArea" minWidth="250.0" prefHeight="273.0" prefWidth="250.0" wrapText="true" GridPane.columnIndex="2" GridPane.rowIndex="1" />
             <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
                   <ComboBox fx:id="methodBox" layoutX="35.0" layoutY="35.0" prefWidth="150.0" promptText="Encryption Method" />
