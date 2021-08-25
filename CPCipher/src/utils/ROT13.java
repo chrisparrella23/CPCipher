@@ -7,13 +7,13 @@ public class ROT13 {
 	 * @param text A string representing the text to be rotated.
 	 * @return The string after rotation.
 	 */
-	public static String encrypt(String text) {
+	public static String rotate(String text) {
 		text = Caesar.removeSpaces(text);
 		StringBuilder sb = new StringBuilder();
 		char[] arr = text.toCharArray();
 		char[] shiftedArr = new char[arr.length];
 		for (int i = 0; i < arr.length; i++) {
-			shiftedArr[i] = rotate(arr[i]);
+			shiftedArr[i] = rotateChar(arr[i]);
 			sb.append(shiftedArr[i]);
 		}
 		return sb.toString();
@@ -24,7 +24,7 @@ public class ROT13 {
 	 * @param letter A char representing the letter to be rotated.
 	 * @return The rotated letter.
 	 */
-	public static char rotate(char letter) {
+	public static char rotateChar(char letter) {
 		int val = (int) letter;
 		int adjust = 0;
 		if (val >= 48 && val <= 57) {
