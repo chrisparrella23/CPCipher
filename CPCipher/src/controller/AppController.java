@@ -25,7 +25,6 @@ import utils.Vigenere;
 public class AppController implements Initializable {
 	
 	private String selectedMethod = "";
-	private String key;
 	private String plaintext = "";
 	private String ciphertext;
 	
