@@ -23,9 +23,6 @@ public class App extends Application {
 	}
 	
 	public static void main(String[] args) {
-		String str = "hello";
-		String cryptStr = Bacon.encrypt(str);
-		System.out.println(cryptStr);
 		launch(args);
 	}
 	
