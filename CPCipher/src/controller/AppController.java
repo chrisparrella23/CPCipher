@@ -20,6 +20,7 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.TextArea;
 import utils.Bacon;
 import utils.Caesar;
+import utils.ROT13;
 import utils.Vigenere;
 
 public class AppController implements Initializable {
@@ -35,14 +36,14 @@ public class AppController implements Initializable {
 	@FXML
 	private TextArea postArea = new TextArea();
 	
-	ObservableList<String> methods = FXCollections.observableArrayList("Bacon", "Caesar", "Vigenere");
+	ObservableList<String> methods = FXCollections.observableArrayList("Bacon", "Caesar", "ROT13", "Vigenere");
 	
 	public AppController() {
 	}
 	
 	/** Encrypts the given plaintext using the selected method.
 	 * 
-	 * @param event
+	 * @param event When the Encrypt button is pressed.
 	 * @throws IOException
 	 */
 	@FXML
@@ -53,6 +54,8 @@ public class AppController implements Initializable {
 				break;
 			case "Caesar":	ciphertext = Caesar.encrypt(plaintext);
 				break;
+			case "ROT13":	ciphertext = ROT13.rotate(plaintext);
+				break;
 			case "Vigenere":	ciphertext = Vigenere.encrypt(plaintext);
 				break;
 		}
@@ -61,7 +64,7 @@ public class AppController implements Initializable {
 	
 	/** Decrypts the given ciphertext using the selected method.
 	 * 
-	 * @param event
+	 * @param event When the Decrypt button is pressed.
 	 * @throws IOException
 	 */
 	@FXML
@@ -71,6 +74,8 @@ public class AppController implements Initializable {
 			case "Bacon":	plaintext = Bacon.decrypt(ciphertext);
 				break;
 			case "Caesar":	plaintext = Caesar.decrypt(ciphertext);
+				break;
+			case "ROT13":	plaintext = ROT13.rotate(ciphertext);
 				break;
 			case "Vigenere":	plaintext = Vigenere.decrypt(ciphertext);
 				break;

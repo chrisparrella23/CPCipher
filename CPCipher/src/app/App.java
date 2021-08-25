@@ -19,7 +19,6 @@ public class App extends Application {
 			primaryStage.setTitle("CPCipher");
 			scene = new Scene(root, 720, 300);
 			primaryStage.setScene(scene);
-//		BorderPane root = new BorderPane();
 			primaryStage.show();
 	}
 	
